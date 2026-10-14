@@ -43,16 +43,10 @@
     ]
   },
   "logo": {
-    "light": "/images/brand/logo-light.png",
-    "dark": "/images/brand/logo-dark.png"
+    "light": "/images/brand/logo-light.svg",
+    "dark": "/images/brand/logo-dark.svg"
   },
   "navbar": {
-    "links": [
-      {
-        "label": "Open TT Arena",
-        "href": "https://play.ttarena.app"
-      }
-    ],
     "primary": {
       "type": "button",
       "label": "Open TT Arena",
