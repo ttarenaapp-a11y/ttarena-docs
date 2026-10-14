@@ -3,76 +3,60 @@
 <head>
 <meta charset="utf-8">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@800&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --ground:#F3F4EF; --ground-raised:#FFFFFF; --ink:#15201B; --ink-soft:#4B5750;
     --line:#DADFD5; --court:#1F5C4D; --court-soft:#E7F0EC; --accent:#FF6B2B; --accent-soft:#FFE7D9;
+    --win-soft:#E4F3EC; --win:#2F8F6E;
   }
   *{box-sizing:border-box}
-  body{margin:0;width:1280px;height:800px;background:var(--ground);font-family:'IBM Plex Sans',sans-serif;color:var(--ink);overflow:hidden}
+  body{margin:0;width:1280px;height:760px;background:var(--ground);font-family:'IBM Plex Sans',sans-serif;color:var(--ink);overflow:hidden}
   h1,h2,h3{font-family:'Archivo',sans-serif;font-weight:800;letter-spacing:-0.01em;margin:0}
-  .topbar{height:64px;background:var(--ground-raised);border-bottom:1px solid var(--line);display:flex;align-items:center;padding:0 32px;justify-content:space-between}
-  .brand{display:flex;align-items:center;gap:10px}
-  .brand .mark{width:30px;height:30px;border-radius:8px;background:var(--court);display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Archivo',sans-serif;font-weight:800;font-size:13px}
-  .brand .name{font-family:'Archivo',sans-serif;font-weight:800;font-size:17px;color:var(--ink)}
-  .avatar{width:34px;height:34px;border-radius:999px;background:var(--accent-soft);color:var(--accent);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px}
-  .wrap{display:flex;gap:28px;padding:32px}
-  .main{flex:1}
-  .headrow{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
-  .headrow h1{font-size:24px}
-  .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-  .card{background:var(--ground-raised);border:1px solid var(--line);border-radius:16px;padding:18px}
-  .card .tname{font-family:'Archivo',sans-serif;font-weight:800;font-size:16px;margin-bottom:6px}
-  .card .meta{color:var(--ink-soft);font-size:13px;display:flex;gap:10px;align-items:center}
-  .pill{display:inline-block;padding:3px 10px;border-radius:999px;font-size:11px;font-weight:700;background:var(--court-soft);color:var(--court)}
+  .page{padding:36px 44px}
+  .eyebrow{font-size:11px;font-weight:700;letter-spacing:.08em;color:var(--court);text-transform:uppercase}
+  .headrow{display:flex;align-items:flex-end;justify-content:space-between;margin-top:6px;margin-bottom:28px}
+  .headrow h1{font-size:30px}
+  .actions{display:flex;gap:10px}
+  .btn{background:var(--accent);color:#fff;border:none;border-radius:10px;padding:11px 18px;font-weight:700;font-size:13.5px}
+  .user{background:var(--ground-raised);border:1px solid var(--line);border-radius:10px;padding:11px 18px;font-weight:700;font-size:13.5px;color:var(--ink)}
+  .list{display:flex;flex-direction:column;gap:10px}
+  .row{background:var(--ground-raised);border:1px solid var(--line);border-radius:14px;padding:18px 22px;display:flex;align-items:center;justify-content:space-between}
+  .tname{font-family:'Archivo',sans-serif;font-weight:800;font-size:17px;margin-bottom:4px}
+  .meta{color:var(--ink-soft);font-size:13px}
+  .pill{padding:5px 13px;border-radius:999px;font-size:10.5px;font-weight:800;letter-spacing:.04em;text-transform:uppercase}
+  .pill.upcoming{background:var(--court-soft);color:var(--court)}
+  .pill.completed{background:#EAEAE4;color:var(--ink-soft)}
   .pill.live{background:var(--accent-soft);color:var(--accent)}
-  .side{width:320px;background:var(--ground-raised);border:1px solid var(--line);border-radius:16px;padding:22px;height:fit-content}
-  .side h3{font-size:15px;margin-bottom:16px}
-  .field{margin-bottom:14px}
-  .field label{display:block;font-size:12px;font-weight:600;color:var(--ink-soft);margin-bottom:6px}
-  .field .input{border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:13px;color:var(--ink);background:var(--ground)}
-  .btn{background:var(--court);color:#fff;border:none;border-radius:10px;padding:12px;text-align:center;font-weight:700;font-size:13px;margin-top:6px}
-  .two{display:flex;gap:10px}
-  .two .field{flex:1}
 </style>
 </head>
 <body>
-  <div class="topbar">
-    <div class="brand"><div class="mark">TT</div><div class="name">TT Arena</div></div>
-    <div class="avatar">YC</div>
-  </div>
-  <div class="wrap">
-    <div class="main">
-      <div class="headrow"><h1>Your tournaments</h1></div>
-      <div class="grid">
-        <div class="card">
-          <div class="tname">Sample Open 2026</div>
-          <div class="meta"><span class="pill live">Live</span> New Delhi &middot; 14&ndash;16 Nov 2026</div>
-        </div>
-        <div class="card">
-          <div class="tname">Riverside Junior Cup</div>
-          <div class="meta"><span class="pill">Upcoming</span> Pune &middot; 2&ndash;3 Dec 2026</div>
-        </div>
-        <div class="card">
-          <div class="tname">Delhi Summer Classic</div>
-          <div class="meta"><span class="pill">Completed</span> New Delhi &middot; 18&ndash;20 Jul 2026</div>
-        </div>
-        <div class="card">
-          <div class="tname">Coastal Open</div>
-          <div class="meta"><span class="pill">Completed</span> Chennai &middot; 2&ndash;4 May 2026</div>
-        </div>
+  <div class="page">
+    <div class="eyebrow">TT Arena &middot; Next</div>
+    <div class="headrow">
+      <h1>Your tournaments</h1>
+      <div class="actions">
+        <div class="btn">+ New tournament</div>
+        <div class="user">Organizer &darr;</div>
       </div>
     </div>
-    <div class="side">
-      <h3>New tournament</h3>
-      <div class="field"><label>Name</label><div class="input">Sample Open 2026</div></div>
-      <div class="field"><label>City</label><div class="input">New Delhi</div></div>
-      <div class="two">
-        <div class="field"><label>Start date</label><div class="input">14 Nov 2026</div></div>
-        <div class="field"><label>End date</label><div class="input">16 Nov 2026</div></div>
+    <div class="list">
+      <div class="row">
+        <div><div class="tname">Sample Open 2026</div><div class="meta">New Delhi &middot; 14&ndash;16 Nov 2026 &middot; 3 categories</div></div>
+        <span class="pill live">Live</span>
       </div>
-      <div class="btn">Create tournament</div>
+      <div class="row">
+        <div><div class="tname">Riverside Junior Cup</div><div class="meta">Pune &middot; 2&ndash;3 Dec 2026 &middot; 2 categories</div></div>
+        <span class="pill upcoming">Upcoming</span>
+      </div>
+      <div class="row">
+        <div><div class="tname">Delhi Summer Classic</div><div class="meta">New Delhi &middot; 18&ndash;20 Jul 2026 &middot; 5 categories</div></div>
+        <span class="pill completed">Completed</span>
+      </div>
+      <div class="row">
+        <div><div class="tname">Coastal Open</div><div class="meta">Chennai &middot; 2&ndash;4 May 2026 &middot; 4 categories</div></div>
+        <span class="pill completed">Completed</span>
+      </div>
     </div>
   </div>
 </body>

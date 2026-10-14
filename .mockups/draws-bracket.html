@@ -8,25 +8,22 @@
   :root{
     --ground:#F3F4EF; --ground-raised:#FFFFFF; --ink:#15201B; --ink-soft:#4B5750;
     --line:#DADFD5; --court:#1F5C4D; --court-soft:#E7F0EC; --accent:#FF6B2B; --accent-soft:#FFE7D9;
-    --win:#2F8F6E; --win-soft:#E4F3EC;
+    --win:#2F8F6E;
   }
   *{box-sizing:border-box}
-  body{margin:0;width:1280px;height:800px;background:var(--ground);font-family:'IBM Plex Sans',sans-serif;color:var(--ink);overflow:hidden}
-  h1,h2,h3{font-family:'Archivo',sans-serif;font-weight:800;letter-spacing:-0.01em;margin:0}
-  .topbar{height:64px;background:var(--ground-raised);border-bottom:1px solid var(--line);display:flex;align-items:center;padding:0 32px;gap:14px}
-  .brand{display:flex;align-items:center;gap:10px}
-  .brand .mark{width:30px;height:30px;border-radius:8px;background:var(--court);display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Archivo',sans-serif;font-weight:800;font-size:13px}
-  .brand .name{font-family:'Archivo',sans-serif;font-weight:800;font-size:17px}
-  .tsep{color:var(--ink-soft);margin:0 2px}
-  .tname{font-weight:700;font-size:14px}
-  .wrap{display:flex}
-  .tabs{width:200px;padding:28px 14px;border-right:1px solid var(--line)}
-  .tabs .t{padding:10px 14px;border-radius:10px;font-size:13px;font-weight:600;color:var(--ink-soft);margin-bottom:4px}
-  .tabs .t.active{background:var(--court-soft);color:var(--court)}
-  .content{flex:1;padding:28px 36px}
-  .headrow{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
-  .headrow h1{font-size:22px}
-  .sub{color:var(--ink-soft);font-size:12.5px;margin-bottom:24px}
+  body{margin:0;width:1280px;height:900px;background:var(--ground);font-family:'IBM Plex Sans',sans-serif;color:var(--ink);overflow:hidden}
+  h1,h2{font-family:'Archivo',sans-serif;font-weight:800;letter-spacing:-0.01em;margin:0}
+  .page{padding:36px 44px}
+  .back{font-size:12.5px;font-weight:700;color:var(--ink-soft);margin-bottom:16px}
+  h1{font-size:26px;margin-bottom:4px}
+  .sub{color:var(--ink-soft);font-size:13px;margin-bottom:20px}
+  .tabs{display:flex;gap:28px;border-bottom:1px solid var(--line);margin-bottom:22px}
+  .tab{padding-bottom:12px;font-size:14px;font-weight:700;color:var(--ink-soft)}
+  .tab.active{color:var(--ink);border-bottom:2.5px solid var(--accent)}
+  .catpills{display:flex;gap:10px;margin-bottom:28px}
+  .cp{padding:8px 16px;border-radius:999px;font-size:11px;font-weight:800;letter-spacing:.04em;text-transform:uppercase}
+  .cp.on{background:var(--court);color:#fff}
+  .cp.off{background:var(--ground-raised);border:1px solid var(--line);color:var(--ink-soft)}
   .bracket{display:flex;gap:56px}
   .round{display:flex;flex-direction:column;justify-content:space-around}
   .round .rlabel{font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-soft);font-weight:700;margin-bottom:10px;text-align:center}
@@ -40,37 +37,38 @@
 </style>
 </head>
 <body>
-  <div class="topbar">
-    <div class="brand"><div class="mark">TT</div><div class="name">TT Arena</div></div>
-    <span class="tsep">/</span><span class="tname">Sample Open 2026</span>
-  </div>
-  <div class="wrap">
+  <div class="page">
+    <div class="back">&larr; All tournaments</div>
+    <h1>Sample Open 2026</h1>
+    <div class="sub">New Delhi &middot; 14&ndash;16 Nov 2026</div>
     <div class="tabs">
-      <div class="t">Settings</div>
-      <div class="t">Registrations</div>
-      <div class="t">Referees</div>
-      <div class="t active">Draws</div>
+      <div class="tab">Registrations</div>
+      <div class="tab">Participants</div>
+      <div class="tab active">Draws</div>
+      <div class="tab">Referees</div>
+      <div class="tab">Settings</div>
     </div>
-    <div class="content">
-      <div class="headrow"><h1>Men's Singles &middot; Knockout</h1></div>
-      <div class="sub">8 players &middot; single elimination</div>
-      <div class="bracket">
-        <div class="round">
-          <div class="rlabel">Quarterfinal</div>
-          <div class="match"><div class="p winner">Arjun Mehta<span class="score">3</span></div><div class="p">Sandeep Rao<span class="score">1</span></div></div>
-          <div class="match"><div class="p">Rahul Sharma<span class="score">1</span></div><div class="p winner">Varun Kapoor<span class="score">3</span></div></div>
-          <div class="match"><div class="p winner">Rohan Verma<span class="score">3</span></div><div class="p">Karan Bhatia<span class="score">0</span></div></div>
-          <div class="match"><div class="p">Aditya Joshi<span class="score">2</span></div><div class="p winner">Nikhil Das<span class="score">3</span></div></div>
-        </div>
-        <div class="round">
-          <div class="rlabel">Semifinal</div>
-          <div class="match"><div class="p winner">Arjun Mehta<span class="score">3</span></div><div class="p">Varun Kapoor<span class="score">1</span></div></div>
-          <div class="match"><div class="p">Rohan Verma<span class="score">2</span></div><div class="p winner">Nikhil Das<span class="score">3</span></div></div>
-        </div>
-        <div class="round final">
-          <div class="rlabel">Final</div>
-          <div class="match"><div class="p">Arjun Mehta<span class="score">&ndash;</span></div><div class="p">Nikhil Das<span class="score">&ndash;</span></div></div>
-        </div>
+    <div class="catpills">
+      <div class="cp on">Men's Singles</div>
+      <div class="cp off">Women's Singles</div>
+      <div class="cp off">Doubles</div>
+    </div>
+    <div class="bracket">
+      <div class="round">
+        <div class="rlabel">Quarterfinal</div>
+        <div class="match"><div class="p winner">Arjun Mehta<span class="score">3</span></div><div class="p">Sandeep Rao<span class="score">1</span></div></div>
+        <div class="match"><div class="p">Rahul Sharma<span class="score">1</span></div><div class="p winner">Varun Kapoor<span class="score">3</span></div></div>
+        <div class="match"><div class="p winner">Rohan Verma<span class="score">3</span></div><div class="p">Karan Bhatia<span class="score">0</span></div></div>
+        <div class="match"><div class="p">Aditya Joshi<span class="score">2</span></div><div class="p winner">Nikhil Das<span class="score">3</span></div></div>
+      </div>
+      <div class="round">
+        <div class="rlabel">Semifinal</div>
+        <div class="match"><div class="p winner">Arjun Mehta<span class="score">3</span></div><div class="p">Varun Kapoor<span class="score">1</span></div></div>
+        <div class="match"><div class="p">Rohan Verma<span class="score">2</span></div><div class="p winner">Nikhil Das<span class="score">3</span></div></div>
+      </div>
+      <div class="round final">
+        <div class="rlabel">Final</div>
+        <div class="match"><div class="p">Arjun Mehta<span class="score">&ndash;</span></div><div class="p">Nikhil Das<span class="score">&ndash;</span></div></div>
       </div>
     </div>
   </div>

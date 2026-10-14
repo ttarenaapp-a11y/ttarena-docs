@@ -8,58 +8,97 @@
   :root{
     --ground:#F3F4EF; --ground-raised:#FFFFFF; --ink:#15201B; --ink-soft:#4B5750;
     --line:#DADFD5; --court:#1F5C4D; --court-soft:#E7F0EC; --accent:#FF6B2B; --accent-soft:#FFE7D9;
-    --win:#2F8F6E; --win-soft:#E4F3EC;
+    --win-soft:#E4F3EC; --win:#2F8F6E;
   }
   *{box-sizing:border-box}
-  body{margin:0;width:1280px;height:800px;background:var(--ground);font-family:'IBM Plex Sans',sans-serif;color:var(--ink);overflow:hidden}
-  h1,h2,h3{font-family:'Archivo',sans-serif;font-weight:800;letter-spacing:-0.01em;margin:0}
-  .topbar{height:64px;background:var(--ground-raised);border-bottom:1px solid var(--line);display:flex;align-items:center;padding:0 32px;gap:14px}
-  .brand{display:flex;align-items:center;gap:10px}
-  .brand .mark{width:30px;height:30px;border-radius:8px;background:var(--court);display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Archivo',sans-serif;font-weight:800;font-size:13px}
-  .brand .name{font-family:'Archivo',sans-serif;font-weight:800;font-size:17px}
-  .tsep{color:var(--ink-soft);margin:0 2px}
-  .tname{font-weight:700;font-size:14px}
-  .wrap{display:flex}
-  .tabs{width:200px;padding:28px 14px;border-right:1px solid var(--line)}
-  .tabs .t{padding:10px 14px;border-radius:10px;font-size:13px;font-weight:600;color:var(--ink-soft);margin-bottom:4px}
-  .tabs .t.active{background:var(--court-soft);color:var(--court)}
-  .content{flex:1;padding:32px 36px}
-  .headrow{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
-  .headrow h1{font-size:22px}
-  .btn{background:var(--court);color:#fff;border:none;border-radius:10px;padding:10px 16px;font-weight:700;font-size:12.5px}
-  table{width:100%;border-collapse:collapse;background:var(--ground-raised);border:1px solid var(--line);border-radius:14px;overflow:hidden}
-  th{text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.03em;color:var(--ink-soft);padding:12px 16px;border-bottom:1px solid var(--line);background:#FAFAF7}
-  td{padding:13px 16px;font-size:13px;border-bottom:1px solid var(--line)}
-  tr:last-child td{border-bottom:none}
-  .status{display:inline-block;padding:4px 11px;border-radius:999px;font-size:11px;font-weight:700}
-  .status.approved{background:var(--win-soft);color:var(--win)}
-  .status.pending{background:var(--accent-soft);color:var(--accent)}
-  .action{color:var(--court);font-weight:700;font-size:12.5px}
+  body{margin:0;width:1280px;height:900px;background:var(--ground);font-family:'IBM Plex Sans',sans-serif;color:var(--ink);overflow:hidden}
+  h1,h2{font-family:'Archivo',sans-serif;font-weight:800;letter-spacing:-0.01em;margin:0}
+  .page{padding:36px 44px}
+  .back{font-size:12.5px;font-weight:700;color:var(--ink-soft);margin-bottom:16px}
+  h1{font-size:26px;margin-bottom:4px}
+  .sub{color:var(--ink-soft);font-size:13px;margin-bottom:20px}
+  .tabs{display:flex;gap:28px;border-bottom:1px solid var(--line);margin-bottom:20px}
+  .tab{padding-bottom:12px;font-size:14px;font-weight:700;color:var(--ink-soft)}
+  .tab.active{color:var(--ink);border-bottom:2.5px solid var(--accent)}
+  .statrow{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+  .stat{font-size:13.5px;color:var(--ink-soft)}
+  .actions{display:flex;gap:10px}
+  .btn{background:var(--ground-raised);border:1px solid var(--line);border-radius:9px;padding:10px 16px;font-weight:700;font-size:12.5px}
+  .btn.primary{background:var(--accent);color:#fff;border:none}
+  .search{background:var(--ground-raised);border:1px solid var(--line);border-radius:10px;padding:12px 15px;font-size:13px;color:var(--ink-soft);margin-bottom:10px}
+  .filters{display:flex;gap:8px;margin-bottom:18px}
+  .fchip{background:var(--ground-raised);border:1px solid var(--line);border-radius:999px;padding:8px 14px;font-size:12px;font-weight:600;color:var(--ink-soft)}
+  .count{margin-left:auto;font-size:12px;color:var(--ink-soft);align-self:center}
+  .row{background:var(--ground-raised);border:1px solid var(--line);border-radius:12px;padding:13px 16px;display:flex;align-items:center;gap:13px;margin-bottom:8px}
+  .avatar{width:38px;height:38px;border-radius:999px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:12.5px;flex-shrink:0}
+  .name{font-weight:700;font-size:13.5px}
+  .meta{font-size:11.5px;color:var(--ink-soft);margin-top:2px}
+  .spacer{flex:1}
+  .rbtn{font-size:11.5px;font-weight:700;border-radius:7px;padding:7px 12px;border:1px solid var(--line);background:var(--ground-raised);margin-left:6px}
+  .rbtn.approve{background:var(--accent);color:#fff;border:none}
+  .rbtn.reject{color:#C0392B;border-color:#F0CFCB}
+  .pill{font-size:10.5px;font-weight:800;padding:6px 12px;border-radius:999px;background:var(--win-soft);color:var(--win);margin-left:6px}
 </style>
 </head>
 <body>
-  <div class="topbar">
-    <div class="brand"><div class="mark">TT</div><div class="name">TT Arena</div></div>
-    <span class="tsep">/</span><span class="tname">Sample Open 2026</span>
-  </div>
-  <div class="wrap">
+  <div class="page">
+    <div class="back">&larr; All tournaments</div>
+    <h1>Sample Open 2026</h1>
+    <div class="sub">New Delhi &middot; 14&ndash;16 Nov 2026</div>
     <div class="tabs">
-      <div class="t">Settings</div>
-      <div class="t active">Registrations</div>
-      <div class="t">Referees</div>
-      <div class="t">Draws</div>
+      <div class="tab active">Registrations</div>
+      <div class="tab">Participants</div>
+      <div class="tab">Draws</div>
+      <div class="tab">Referees</div>
+      <div class="tab">Settings</div>
     </div>
-    <div class="content">
-      <div class="headrow"><h1>Registrations</h1><div class="btn">+ Add registration</div></div>
-      <table>
-        <tr><th>Name</th><th>Category</th><th>City</th><th>Club</th><th>Status</th><th></th></tr>
-        <tr><td>Arjun Mehta</td><td>Men's Singles</td><td>New Delhi</td><td>Capital TT Academy</td><td><span class="status approved">Approved</span></td><td class="action">Edit</td></tr>
-        <tr><td>Priya Nair</td><td>Women's Singles</td><td>New Delhi</td><td>Riverside Club</td><td><span class="status approved">Approved</span></td><td class="action">Edit</td></tr>
-        <tr><td>Rahul Sharma</td><td>Men's Singles</td><td>Gurugram</td><td>&mdash;</td><td><span class="status pending">Pending</span></td><td class="action">Approve</td></tr>
-        <tr><td>Sneha Iyer</td><td>Doubles</td><td>New Delhi</td><td>Capital TT Academy</td><td><span class="status approved">Approved</span></td><td class="action">Edit</td></tr>
-        <tr><td>Varun Kapoor</td><td>Men's Singles</td><td>Noida</td><td>Eastside Paddlers</td><td><span class="status pending">Pending</span></td><td class="action">Approve</td></tr>
-        <tr><td>Rohan Verma</td><td>Doubles</td><td>New Delhi</td><td>&mdash;</td><td><span class="status approved">Approved</span></td><td class="action">Edit</td></tr>
-      </table>
+    <div class="statrow">
+      <div class="stat">6 registered &middot; 2 pending approval</div>
+      <div class="actions"><div class="btn">Import CSV</div><div class="btn primary">+ Add registration</div></div>
+    </div>
+    <div class="search">Search by name, school, club, city, or category&hellip; (min 3 letters)</div>
+    <div class="filters">
+      <div class="fchip">Category: All</div>
+      <div class="fchip">City: All</div>
+      <div class="fchip">Academy / Club: All</div>
+      <div class="count">6 total</div>
+    </div>
+
+    <div class="row">
+      <div class="avatar" style="background:#1F5C4D">AM</div>
+      <div><div class="name">Arjun Mehta &middot; Men's Singles</div><div class="meta">Men's Singles &middot; New Delhi &middot; Capital TT Academy</div></div>
+      <div class="spacer"></div>
+      <div class="rbtn">Edit</div><div class="rbtn">Delete</div><span class="pill">Approved</span>
+    </div>
+    <div class="row">
+      <div class="avatar" style="background:#A4572E">PN</div>
+      <div><div class="name">Priya Nair &middot; Women's Singles</div><div class="meta">Women's Singles &middot; New Delhi &middot; Riverside Club</div></div>
+      <div class="spacer"></div>
+      <div class="rbtn">Edit</div><div class="rbtn">Delete</div><span class="pill">Approved</span>
+    </div>
+    <div class="row">
+      <div class="avatar" style="background:#6B5B95">RS</div>
+      <div><div class="name">Rahul Sharma &middot; Men's Singles</div><div class="meta">Men's Singles &middot; Gurugram &middot; &mdash;</div></div>
+      <div class="spacer"></div>
+      <div class="rbtn">Edit</div><div class="rbtn reject">Reject</div><div class="rbtn approve">Approve</div>
+    </div>
+    <div class="row">
+      <div class="avatar" style="background:#1F5C4D">SI</div>
+      <div><div class="name">Sneha Iyer / Divya Rao &middot; Doubles</div><div class="meta">Doubles &middot; New Delhi &middot; Capital TT Academy</div></div>
+      <div class="spacer"></div>
+      <div class="rbtn">Edit</div><div class="rbtn">Delete</div><span class="pill">Approved</span>
+    </div>
+    <div class="row">
+      <div class="avatar" style="background:#A4572E">VK</div>
+      <div><div class="name">Varun Kapoor &middot; Men's Singles</div><div class="meta">Men's Singles &middot; Noida &middot; Eastside Paddlers</div></div>
+      <div class="spacer"></div>
+      <div class="rbtn">Edit</div><div class="rbtn reject">Reject</div><div class="rbtn approve">Approve</div>
+    </div>
+    <div class="row">
+      <div class="avatar" style="background:#6B5B95">RV</div>
+      <div><div class="name">Rohan Verma &middot; Men's Singles</div><div class="meta">Men's Singles &middot; New Delhi &middot; &mdash;</div></div>
+      <div class="spacer"></div>
+      <div class="rbtn">Edit</div><div class="rbtn">Delete</div><span class="pill">Approved</span>
     </div>
   </div>
 </body>

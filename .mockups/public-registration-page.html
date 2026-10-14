@@ -7,50 +7,62 @@
 <style>
   :root{
     --ground:#F3F4EF; --ground-raised:#FFFFFF; --ink:#15201B; --ink-soft:#4B5750;
-    --line:#DADFD5; --court:#1F5C4D; --court-soft:#E7F0EC; --accent:#FF6B2B;
+    --line:#DADFD5; --court:#1F5C4D; --accent:#FF6B2B;
   }
   *{box-sizing:border-box}
-  body{margin:0;width:1280px;height:800px;background:var(--ground);font-family:'IBM Plex Sans',sans-serif;color:var(--ink);overflow:hidden;display:flex;justify-content:center}
+  body{margin:0;width:1280px;height:900px;background:var(--ground);font-family:'IBM Plex Sans',sans-serif;color:var(--ink);overflow:hidden}
   h1,h2,h3{font-family:'Archivo',sans-serif;font-weight:800;letter-spacing:-0.01em;margin:0}
-  .page{width:640px;padding-top:40px}
-  .brand{display:flex;align-items:center;gap:10px;justify-content:center;margin-bottom:28px}
-  .brand .mark{width:30px;height:30px;border-radius:8px;background:var(--court);display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Archivo',sans-serif;font-weight:800;font-size:13px}
-  .brand .name{font-family:'Archivo',sans-serif;font-weight:800;font-size:17px}
-  .hero{background:var(--court);color:#fff;border-radius:18px;padding:26px 30px;margin-bottom:22px}
-  .hero .t{font-size:21px;margin-bottom:4px}
-  .hero .s{font-size:13px;opacity:.85}
-  .card{background:var(--ground-raised);border:1px solid var(--line);border-radius:18px;padding:28px}
+  .banner{width:100%;height:240px;background:linear-gradient(135deg,#0E2E27,#1F5C4D 60%,#2E7A64);position:relative;display:flex;align-items:flex-end;padding:30px 44px;overflow:hidden}
+  .banner::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 80% 20%, rgba(255,107,43,.28), transparent 55%)}
+  .banner .btitle{position:relative;font-family:'Archivo',sans-serif;font-weight:800;font-size:40px;color:#fff;letter-spacing:-0.01em}
+  .wrap{max-width:640px;margin:0 auto;padding:30px 0 0}
+  .eyebrow{font-size:11px;font-weight:700;letter-spacing:.08em;color:var(--court);text-transform:uppercase;text-align:center}
+  .title{font-size:24px;text-align:center;margin-top:4px}
+  .sub{text-align:center;color:var(--ink-soft);font-size:13px;margin-top:4px;margin-bottom:22px}
+  .progress{display:flex;gap:6px;margin-bottom:8px}
+  .seg{flex:1;height:5px;border-radius:999px;background:var(--line)}
+  .seg.on{background:var(--accent)}
+  .steplabel{font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--ink-soft);text-transform:uppercase;margin-bottom:20px}
+  .card{background:var(--ground-raised);border:1px solid var(--line);border-radius:18px;padding:26px}
+  .photorow{display:flex;align-items:center;gap:16px;background:var(--ground);border:1px dashed var(--line);border-radius:14px;padding:16px;margin-bottom:18px}
+  .avatar{width:54px;height:54px;border-radius:999px;background:linear-gradient(135deg,#FF6B2B,#FF9445);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:17px;flex-shrink:0}
+  .phint{font-size:12px;color:var(--ink-soft)}
+  .pbtn{margin-top:6px;background:var(--ground-raised);border:1px solid var(--line);border-radius:8px;padding:6px 12px;font-size:11.5px;font-weight:700;display:inline-block}
   .row{display:flex;gap:12px;margin-bottom:14px}
   .field{flex:1}
-  .field label{display:block;font-size:12px;font-weight:600;color:var(--ink-soft);margin-bottom:6px}
+  .flabel{font-size:12px;font-weight:600;color:var(--ink-soft);margin-bottom:6px}
   .input{border:1px solid var(--line);border-radius:10px;padding:11px 13px;font-size:13px;background:var(--ground)}
+  .fhint{font-size:10.5px;color:var(--ink-soft);margin-top:5px}
   .btn{background:var(--accent);color:#fff;border:none;border-radius:10px;padding:13px;text-align:center;font-weight:700;font-size:14px;margin-top:8px}
 </style>
 </head>
 <body>
-  <div class="page">
-    <div class="brand"><div class="mark">TT</div><div class="name">TT Arena</div></div>
-    <div class="hero">
-      <div class="t">Register &mdash; Sample Open 2026</div>
-      <div class="s">New Delhi &middot; 14&ndash;16 Nov 2026 &middot; Registration closes 10 Nov</div>
-    </div>
+  <div class="banner"><div class="btitle">Sample Open 2026</div></div>
+  <div class="wrap">
+    <div class="eyebrow">Register</div>
+    <div class="title">Sample Open 2026</div>
+    <div class="sub">New Delhi &middot; 14&ndash;16 Nov 2026</div>
+    <div class="progress"><div class="seg on"></div><div class="seg"></div><div class="seg"></div></div>
+    <div class="steplabel">Step 1 of 3 &middot; Your info</div>
     <div class="card">
+      <div class="photorow">
+        <div class="avatar">PN</div>
+        <div><div class="phint">We'll use your initials until you add one</div><div class="pbtn">Upload photo</div></div>
+      </div>
+      <div class="row"><div class="field"><div class="flabel">Full name</div><div class="input">Priya Nair</div></div></div>
       <div class="row">
-        <div class="field"><label>Full name</label><div class="input">Priya Nair</div></div>
-        <div class="field"><label>Date of birth</label><div class="input">04 Jun 2008</div></div>
+        <div class="field">
+          <div class="flabel">Phone number</div>
+          <div class="input">98xxx xx212</div>
+          <div class="fhint">Used to find your registration in the Player App later.</div>
+        </div>
+        <div class="field"><div class="flabel">City</div><div class="input">New Delhi</div></div>
       </div>
       <div class="row">
-        <div class="field"><label>Gender</label><div class="input">Female</div></div>
-        <div class="field"><label>Category</label><div class="input">Women's Singles</div></div>
+        <div class="field"><div class="flabel">Academy / Club</div><div class="input">Riverside Club</div></div>
+        <div class="field"><div class="flabel">Gender</div><div class="input">Female</div></div>
       </div>
-      <div class="row">
-        <div class="field"><label>City</label><div class="input">New Delhi</div></div>
-        <div class="field"><label>District</label><div class="input">South Delhi</div></div>
-      </div>
-      <div class="row">
-        <div class="field"><label>Academy / Club</label><div class="input">Riverside Club</div></div>
-      </div>
-      <div class="btn">Submit registration</div>
+      <div class="btn">Continue</div>
     </div>
   </div>
 </body>

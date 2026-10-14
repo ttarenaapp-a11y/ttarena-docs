@@ -3,93 +3,104 @@
 <head>
 <meta charset="utf-8">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@800&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
 <style>
   :root{
     --ground:#F3F4EF; --ground-raised:#FFFFFF; --ink:#15201B; --ink-soft:#4B5750;
-    --line:#DADFD5; --court:#1F5C4D; --court-soft:#E7F0EC; --accent:#FF6B2B; --accent-soft:#FFE7D9;
+    --line:#DADFD5; --court:#1F5C4D; --court-soft:#E7F0EC; --accent:#FF6B2B;
   }
   *{box-sizing:border-box}
-  body{margin:0;width:1280px;height:800px;background:var(--ground);font-family:'IBM Plex Sans',sans-serif;color:var(--ink);overflow:hidden}
+  body{margin:0;width:1280px;height:1180px;background:var(--ground);font-family:'IBM Plex Sans',sans-serif;color:var(--ink);overflow:hidden}
   h1,h2,h3{font-family:'Archivo',sans-serif;font-weight:800;letter-spacing:-0.01em;margin:0}
-  .topbar{height:64px;background:var(--ground-raised);border-bottom:1px solid var(--line);display:flex;align-items:center;padding:0 32px;gap:14px}
-  .brand{display:flex;align-items:center;gap:10px}
-  .brand .mark{width:30px;height:30px;border-radius:8px;background:var(--court);display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Archivo',sans-serif;font-weight:800;font-size:13px}
-  .brand .name{font-family:'Archivo',sans-serif;font-weight:800;font-size:17px}
-  .tsep{color:var(--ink-soft);margin:0 2px}
-  .tname{font-weight:700;font-size:14px}
-  .wrap{display:flex}
-  .tabs{width:200px;padding:28px 14px;border-right:1px solid var(--line)}
-  .tabs .t{padding:10px 14px;border-radius:10px;font-size:13px;font-weight:600;color:var(--ink-soft);margin-bottom:4px}
-  .tabs .t.active{background:var(--court-soft);color:var(--court)}
-  .content{flex:1;padding:32px 40px;max-width:760px}
-  .content h1{font-size:22px;margin-bottom:24px}
-  .section{margin-bottom:28px}
-  .section h3{font-size:13px;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-soft);margin-bottom:12px}
+  .page{padding:36px 44px}
+  .back{font-size:12.5px;font-weight:700;color:var(--ink-soft);margin-bottom:16px}
+  h1{font-size:26px;margin-bottom:4px}
+  .sub{color:var(--ink-soft);font-size:13px;margin-bottom:20px}
+  .tabs{display:flex;gap:28px;border-bottom:1px solid var(--line);margin-bottom:24px}
+  .tab{padding-bottom:12px;font-size:14px;font-weight:700;color:var(--ink-soft)}
+  .tab.active{color:var(--ink);border-bottom:2.5px solid var(--accent)}
+  .card{background:var(--ground-raised);border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin-bottom:14px;max-width:760px}
+  .label{font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--ink-soft);text-transform:uppercase;margin-bottom:12px}
+  .linkrow{display:flex;gap:10px}
+  .linkbox{flex:1;background:var(--ground);border:1px solid var(--line);border-radius:9px;padding:11px 13px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--ink-soft)}
+  .smallbtn{background:var(--ground-raised);border:1px solid var(--line);border-radius:9px;padding:11px 16px;font-weight:700;font-size:12.5px}
+  .imgrow{display:flex;align-items:center;gap:16px}
+  .imgbox{width:150px;height:78px;border-radius:10px;background:linear-gradient(135deg,#1F5C4D,#0E2E27);display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Archivo',sans-serif;font-weight:800;font-size:12px;text-align:center;padding:6px}
+  .hint{font-size:11.5px;color:var(--ink-soft);margin-top:10px;line-height:1.5}
   .row{display:flex;gap:12px}
-  .field{flex:1;margin-bottom:0}
-  .field label{display:block;font-size:12px;font-weight:600;color:var(--ink-soft);margin-bottom:6px}
-  .input{border:1px solid var(--line);border-radius:10px;padding:11px 13px;font-size:13px;background:var(--ground-raised)}
-  .imgbox{width:220px;height:110px;border:1.5px dashed var(--line);border-radius:12px;display:flex;align-items:center;justify-content:center;color:var(--ink-soft);font-size:12px;background:var(--ground-raised)}
-  .chips{display:flex;gap:8px;flex-wrap:wrap}
-  .chip{padding:7px 14px;border-radius:999px;font-size:12.5px;font-weight:600;background:var(--court-soft);color:var(--court)}
-  .chip.add{background:var(--ground-raised);border:1px dashed var(--line);color:var(--ink-soft)}
-  .tables{display:flex;gap:8px;flex-wrap:wrap}
-  .table{width:40px;height:40px;border-radius:10px;background:var(--ground-raised);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;color:var(--ink)}
+  .field{flex:1}
+  .flabel{font-size:11px;font-weight:700;color:var(--ink-soft);margin-bottom:6px}
+  .input{border:1px solid var(--line);border-radius:9px;padding:10px 12px;font-size:13px;background:var(--ground)}
+  .catrow{display:flex;align-items:center;justify-content:space-between;padding:11px 14px;background:var(--ground);border-radius:9px;margin-bottom:8px}
+  .badge{font-size:10px;font-weight:800;color:var(--court);background:var(--court-soft);padding:4px 9px;border-radius:999px;margin-right:10px}
+  .rm{font-size:11.5px;font-weight:700;background:var(--ground-raised);border:1px solid var(--line);border-radius:7px;padding:5px 11px}
+  .addrow{display:flex;gap:8px;margin-top:4px}
+  .addrow .input{flex:1}
+  .check{display:flex;align-items:center;gap:9px;font-size:13px;margin-bottom:10px}
+  .box{width:16px;height:16px;border-radius:4px;background:var(--court)}
+  .box.off{background:var(--ground-raised);border:1.5px solid var(--line)}
 </style>
 </head>
 <body>
-  <div class="topbar">
-    <div class="brand"><div class="mark">TT</div><div class="name">TT Arena</div></div>
-    <span class="tsep">/</span><span class="tname">Sample Open 2026</span>
-  </div>
-  <div class="wrap">
+  <div class="page">
+    <div class="back">&larr; All tournaments</div>
+    <h1>Sample Open 2026</h1>
+    <div class="sub">New Delhi &middot; 14&ndash;16 Nov 2026</div>
     <div class="tabs">
-      <div class="t active">Settings</div>
-      <div class="t">Registrations</div>
-      <div class="t">Referees</div>
-      <div class="t">Draws</div>
+      <div class="tab">Registrations</div>
+      <div class="tab">Participants</div>
+      <div class="tab">Draws</div>
+      <div class="tab">Referees</div>
+      <div class="tab active">Settings</div>
     </div>
-    <div class="content">
-      <h1>Settings</h1>
 
-      <div class="section">
-        <h3>Tournament dates</h3>
-        <div class="row">
-          <div class="field"><label>Start date</label><div class="input">14 Nov 2026</div></div>
-          <div class="field"><label>End date</label><div class="input">16 Nov 2026</div></div>
-        </div>
+    <div class="card">
+      <div class="label">Public registration link</div>
+      <div class="linkrow">
+        <div class="linkbox">https://play.ttarena.app/register/samp1eOpen2026xyz</div>
+        <div class="smallbtn">Copy</div>
       </div>
+    </div>
 
-      <div class="section">
-        <h3>Tournament image</h3>
-        <div class="imgbox">Upload image</div>
+    <div class="card">
+      <div class="label">Tournament image</div>
+      <div class="imgrow">
+        <div class="imgbox">SAMPLE OPEN 2026</div>
+        <div class="smallbtn">Replace image</div>
       </div>
+      <div class="hint">Shown when your registration link is shared in WhatsApp and elsewhere.</div>
+    </div>
 
-      <div class="section">
-        <h3>Categories</h3>
-        <div class="chips">
-          <div class="chip">Men's Singles</div>
-          <div class="chip">Women's Singles</div>
-          <div class="chip">Doubles</div>
-          <div class="chip add">+ Add category</div>
-        </div>
+    <div class="card">
+      <div class="label">Tournament dates</div>
+      <div class="row">
+        <div class="field"><div class="flabel">Start date</div><div class="input">14/11/2026</div></div>
+        <div class="field"><div class="flabel">End date</div><div class="input">16/11/2026</div></div>
       </div>
+    </div>
 
-      <div class="section">
-        <h3>Tables</h3>
-        <div class="tables">
-          <div class="table">1</div><div class="table">2</div><div class="table">3</div>
-          <div class="table">4</div><div class="table">5</div><div class="table">6</div>
-        </div>
-      </div>
+    <div class="card">
+      <div class="label">Categories</div>
+      <div class="catrow"><span><span class="badge">SINGLES</span>Men's Singles</span><span class="rm">Remove</span></div>
+      <div class="catrow"><span><span class="badge">SINGLES</span>Women's Singles</span><span class="rm">Remove</span></div>
+      <div class="catrow"><span><span class="badge">DOUBLES</span>Doubles</span><span class="rm">Remove</span></div>
+      <div class="addrow"><div class="input">e.g. Women's Doubles A</div><div class="smallbtn">Add</div></div>
+    </div>
 
-      <div class="section">
-        <h3>Registration</h3>
-        <div class="row">
-          <div class="field"><label>Registration deadline</label><div class="input">10 Nov 2026</div></div>
-        </div>
-      </div>
+    <div class="card">
+      <div class="label">Tables</div>
+      <div class="catrow"><span>Table 1</span><span class="rm">Remove</span></div>
+      <div class="catrow"><span>Table 2</span><span class="rm">Remove</span></div>
+      <div class="catrow"><span>Table 3</span><span class="rm">Remove</span></div>
+      <div class="addrow"><div class="input">e.g. Table 5 or Center Court</div><div class="smallbtn">Add</div></div>
+    </div>
+
+    <div class="card">
+      <div class="label">Registration form</div>
+      <div class="check"><div class="box"></div>Registration open</div>
+      <div class="check"><div class="box off"></div>Collect ranking / seeding info</div>
+      <div class="check"><div class="box off"></div>Auto-approve registrations</div>
+      <div class="field" style="max-width:220px;margin-top:6px"><div class="flabel">Registration deadline</div><div class="input">10/11/2026</div></div>
     </div>
   </div>
 </body>

@@ -6,32 +6,38 @@
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#F5F4F9; --surface:#FFFFFF; --surface2:#EDEBF4; --text:#1C1C24; --muted:#69667A;
-    --line:#E2DFEC; --teal:#00998A; --orange:#FF6B2B;
+    --bg:#1C1C24; --surface:#242430; --surface2:#2C2C3B; --text:#F2F0EB; --muted:#9B99AE;
+    --line:#35354A; --teal:#00C2A8; --orange:#FF6B2B;
   }
   *{box-sizing:border-box}
   body{margin:0;width:390px;height:844px;background:var(--bg);font-family:'Instrument Sans',sans-serif;color:var(--text);overflow:hidden;position:relative}
-  .topbar{display:flex;align-items:center;gap:10px;padding:18px 20px 10px}
-  .mark{width:30px;height:30px;border-radius:8px;background:var(--orange);display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:13px}
-  .title{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:19px}
-  .content{padding:14px 20px}
-  .mini{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-weight:700;margin:14px 0 8px}
-  .card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:16px;margin-bottom:12px}
-  .card .row1{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+  .topbar{display:flex;align-items:center;justify-content:space-between;padding:20px 20px 4px}
+  .title{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:21px}
+  .icons{display:flex;gap:14px;align-items:center}
+  .icon{width:22px;height:22px;display:flex;align-items:center;justify-content:center;color:var(--muted)}
+  .content{padding:18px 20px}
+  .mini{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-weight:700;margin-bottom:10px}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:17px;margin-bottom:12px}
+  .card .row1{display:flex;justify-content:space-between;align-items:center;margin-bottom:7px}
   .card .tname{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:15.5px}
   .badge{font-size:10px;font-weight:800;padding:4px 10px;border-radius:999px;text-transform:uppercase}
   .badge.live{background:var(--orange);color:#fff}
   .badge.soon{background:var(--surface2);color:var(--muted)}
   .card .meta{color:var(--muted);font-size:12px}
-  .navbar{position:absolute;left:0;right:0;bottom:0;height:72px;background:var(--surface);border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-around}
-  .nav{display:flex;flex-direction:column;align-items:center;gap:4px;font-size:10.5px;color:var(--muted);font-weight:600}
+  .navbar{position:absolute;left:0;right:0;bottom:0;height:78px;background:var(--surface);border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-around;padding-bottom:8px}
+  .nav{display:flex;flex-direction:column;align-items:center;gap:5px;font-size:11px;color:var(--muted);font-weight:600}
   .nav.active{color:var(--orange)}
-  .dot{width:22px;height:22px;border-radius:7px;background:var(--surface2)}
-  .nav.active .dot{background:var(--orange)}
+  svg{display:block}
 </style>
 </head>
 <body>
-  <div class="topbar"><div class="mark">TT</div><div class="title">Home</div></div>
+  <div class="topbar">
+    <div class="title">Home</div>
+    <div class="icons">
+      <svg class="icon" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+      <svg class="icon" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    </div>
+  </div>
   <div class="content">
     <div class="mini">Your tournaments</div>
     <div class="card">
@@ -48,11 +54,22 @@
     </div>
   </div>
   <div class="navbar">
-    <div class="nav active"><div class="dot"></div>Home</div>
-    <div class="nav"><div class="dot"></div>Draw</div>
-    <div class="nav"><div class="dot"></div>Schedule</div>
-    <div class="nav"><div class="dot"></div>Chat</div>
-    <div class="nav"><div class="dot"></div>Profile</div>
+    <div class="nav active">
+      <svg width="21" height="21" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3l9 8h-3v9h-5v-6H11v6H6v-9H3z"/></svg>
+      Home
+    </div>
+    <div class="nav">
+      <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M7 4h10l-1 9a4 4 0 0 1-8 0L7 4z"/><path d="M5 4H3v2a4 4 0 0 0 4 4M19 4h2v2a4 4 0 0 1-4 4"/></svg>
+      Draw
+    </div>
+    <div class="nav">
+      <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+      Schedule
+    </div>
+    <div class="nav">
+      <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+      Profile
+    </div>
   </div>
 </body>
 </html>
