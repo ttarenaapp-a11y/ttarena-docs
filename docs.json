@@ -1,0 +1,67 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "TT Arena",
+  "colors": {
+    "primary": "#1F5C4D",
+    "light": "#4FA98C",
+    "dark": "#15201B"
+  },
+  "favicon": "/images/brand/favicon.svg",
+  "navigation": {
+    "groups": [
+      {
+        "group": "Getting Started",
+        "pages": [
+          "index",
+          "getting-started/for-organizers",
+          "getting-started/for-players"
+        ]
+      },
+      {
+        "group": "Organizer Guide",
+        "pages": [
+          "organizer-guide/tournament-settings",
+          "organizer-guide/registrations",
+          "organizer-guide/draws-and-scoring"
+        ]
+      },
+      {
+        "group": "Player App",
+        "pages": [
+          "player-app/getting-started",
+          "player-app/using-the-app"
+        ]
+      },
+      {
+        "group": "More",
+        "pages": [
+          "faq",
+          "changelog"
+        ]
+      }
+    ]
+  },
+  "logo": {
+    "light": "/images/brand/logo-light.png",
+    "dark": "/images/brand/logo-dark.png"
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Open TT Arena",
+        "href": "https://play.ttarena.app"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Open TT Arena",
+      "href": "https://play.ttarena.app"
+    }
+  },
+  "footer": {
+    "socials": {
+      "instagram": "https://www.instagram.com/ttarena.app"
+    }
+  }
+}
